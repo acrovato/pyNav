@@ -3,6 +3,7 @@
 
 '''
 Leg
+Manage a leg
 Adrien Crovato
 2019
 '''
@@ -22,6 +23,7 @@ class Leg:
         self.trace()
         self.speed()
         self.compute()
+        self.ltime()
     
     def trace(self):
         ''' Compute leg track assuming it is rhumb line (loxodrome)
@@ -49,6 +51,8 @@ class Leg:
         self.dst = math.sqrt(dPhi*dPhi + q*q*dLambd*dLambd) * 6371 / 1.852 # nm
         # track
         self.trck = math.degrees(math.atan2(dLambd, dPsi))
+        if self.trck < 0:
+            self.trck += 360 # to get track in [0,360]
     
     def speed(self):
         ''' Convert CAS to TAS
@@ -86,4 +90,14 @@ class Leg:
         self.tick = 3. * self.gs
         # fuel consumption
         self.fuel = self.flo * self.time
+
+    def ltime(self):
+        '''Convert time to HH:MM:SS
+        '''
+        import math
+        h = int(math.floor(self.time))
+        dec = (self.time - h) * 60
+        m = int(math.floor(dec))
+        s = int(math.ceil((dec - m) * 60))
+        self.timec = '{0:>2s}:{1:>2s}:{2:>2s}'.format(str(h), str(m), str(s))
     

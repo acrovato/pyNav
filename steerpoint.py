@@ -3,6 +3,7 @@
 
 '''
 Steerpoint
+Manage a steerpoint
 Adrien Crovato
 2019
 '''
