@@ -31,9 +31,9 @@ def params():
     p['CAS'] = 85 # calibrated airspeed [kts]
     p['FuelFlow'] = 5.2 # fuel consumption [USG/h]
     # set atmospheric parameters
-    p['Wind'] = [360, 5] # wind direction [deg] and speed [kts]
-    p['OAT'] = 15 # outside air temperature at considered altitude [C]
-    p['Altitude'] = [2000, 2000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 2000, 2000] # pressure altitude [feet]
+    p['Wind'] = [360, 5] # mean wind direction [deg] and speed [kts]
+    p['OAT'] = [15, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 15, 15] # list of outside air temperature at considered altitude [C]
+    p['Altitude'] = [2000, 2000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 2000, 2000] # list of pressure altitude [feet]
     return p
 
 def main():

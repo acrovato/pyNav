@@ -20,8 +20,8 @@ def params():
     p['FuelFlow'] = 5.2 # fuel consumption [USG/h]
     # set atmospheric parameters
     p['Wind'] = [250, 15] # wind direction [deg] and speed [kts]
-    p['OAT'] = 20 # outside air temperature at considered altitude [C]
-    p['Altitude'] = [2000, 2000] # pressure altitude [feet]
+    p['OAT'] = [20] * 2 # list of outside air temperature at considered altitude [C]
+    p['Altitude'] = [2000] * 2 # list of pressure altitude [feet]
     return p
 
 def main():

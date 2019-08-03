@@ -23,7 +23,7 @@ class Planner:
         print 'done!'
         print 'Creating legs... ',
         for i in range(0, len(p['Steerpoints']) - 1):
-            self.legs.append(leg.Leg(i, self.strp[i], self.strp[i+1], p['CAS'], p['Altitude'][i], p['OAT'], p['Wind'], p['FuelFlow']))
+            self.legs.append(leg.Leg(i, self.strp[i], self.strp[i+1], p['CAS'], p['Altitude'][i], p['OAT'][i], p['Wind'], p['FuelFlow']))
         print 'done!'
         # compute total
         self.total()
