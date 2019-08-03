@@ -24,4 +24,4 @@ A workspace folder will be created and will contain two files:
   - a log file in text format,
   - a gpx file than can be vizualized from the web (e.g. https://www.gpsvisualizer.com/).
 
-Sample naviagtion input files can be found under the [tests](/tests) folder.
+Sample navigation input files can be found under the [tests](/tests) folder.
